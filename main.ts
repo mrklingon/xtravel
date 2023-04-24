@@ -108,6 +108,6 @@ basic.forever(function () {
     basic.pause(100)
 })
 basic.forever(function () {
-    led.plotBrightness(x, y, 255)
     showWindow(cx, cy)
+    led.plotBrightness(x, y, 255)
 })

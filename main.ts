@@ -57,11 +57,19 @@ function findDir () {
     return dir
 }
 // get  x,y value from cosmos
-// 
+// fixed to wrap on edges.
 function getval (xx: number, yy: number) {
-    return cosmos[xx + yy * radius]
+    spot = xx + yy * radius
+    if (spot < 0) {
+        spot = spot + radius * radius
+    }
+    if (spot > radius * radius) {
+        spot = spot - radius * radius
+    }
+    return cosmos[spot]
 }
 let move = 0
+let spot = 0
 let dir = 0
 let dy: number[] = []
 let dx: number[] = []
